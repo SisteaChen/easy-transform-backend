@@ -1,2 +1,2 @@
 # easy-transform-backend
-easy-transform-backend using Django and Mysql
+easy transform backend using django

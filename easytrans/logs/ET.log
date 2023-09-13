@@ -1,0 +1,467 @@
+INFO 2021-03-17 01:42:38,981 autoreload 14728 5500 617 Watching for file changes with StatReloader
+ERROR 2021-03-17 01:42:40,539 log 14728 13916 224 Internal Server Error: /
+Traceback (most recent call last):
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django_redis\cache.py", line 27, in _decorator
+    return method(self, *args, **kwargs)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django_redis\cache.py", line 76, in set
+    return self.client.set(*args, **kwargs)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django_redis\client\default.py", line 166, in set
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ResponseError: MISCONF Redis is configured to save RDB snapshots, but is currently not able to persist on disk. Commands that may modify the data set are disabled. Please check Redis logs for details about the error.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\anaconda\envs\django3.1\lib\site-packages\rest_framework\views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\rest_framework\views.py", line 416, in initial
+    self.check_throttles(request)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\rest_framework\views.py", line 359, in check_throttles
+    if not throttle.allow_request(request, self):
+  File "E:\anaconda\envs\django3.1\lib\site-packages\rest_framework\throttling.py", line 132, in allow_request
+    return self.throttle_success()
+  File "E:\anaconda\envs\django3.1\lib\site-packages\rest_framework\throttling.py", line 140, in throttle_success
+    self.cache.set(self.key, self.history, self.duration)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django_redis\cache.py", line 34, in _decorator
+    raise e.__cause__
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django_redis\client\default.py", line 156, in set
+    return bool(client.set(nkey, nvalue, nx=nx, px=timeout, xx=xx))
+  File "E:\anaconda\envs\django3.1\lib\site-packages\redis\client.py", line 1801, in set
+    return self.execute_command('SET', *pieces)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\redis\client.py", line 901, in execute_command
+    return self.parse_response(conn, command_name, **options)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\redis\client.py", line 915, in parse_response
+    response = connection.read_response()
+  File "E:\anaconda\envs\django3.1\lib\site-packages\redis\connection.py", line 756, in read_response
+    raise response
+redis.exceptions.ResponseError: MISCONF Redis is configured to save RDB snapshots, but is currently not able to persist on disk. Commands that may modify the data set are disabled. Please check Redis logs for details about the error.
+ERROR 2021-03-17 01:42:40,542 basehttp 14728 13916 157 "GET / HTTP/1.1" 500 150964
+INFO 2021-03-17 01:47:25,926 basehttp 14728 13916 157 "GET / HTTP/1.1" 200 5262
+WARNING 2021-03-17 01:47:28,074 log 14728 13916 224 Not Found: /post
+WARNING 2021-03-17 01:47:28,075 basehttp 14728 13916 157 "GET /post HTTP/1.1" 404 3127
+WARNING 2021-03-17 01:47:29,778 log 14728 13916 224 Not Found: /posted
+WARNING 2021-03-17 01:47:29,779 basehttp 14728 13916 157 "GET /posted HTTP/1.1" 404 3133
+INFO 2021-03-17 01:47:31,971 basehttp 14728 13916 157 "GET /postes HTTP/1.1" 301 0
+INFO 2021-03-17 01:47:31,999 basehttp 14728 13916 157 "GET /postes/ HTTP/1.1" 200 6443
+INFO 2021-03-17 01:59:49,072 autoreload 14728 5500 240 D:\gitrepo\easy-transform-backend\easytrans\easytrans\settings\dev.py changed, reloading.
+INFO 2021-03-17 01:59:49,697 autoreload 15256 8440 617 Watching for file changes with StatReloader
+INFO 2021-03-17 02:00:18,846 autoreload 15256 8440 240 D:\gitrepo\easy-transform-backend\easytrans\easytrans\settings\dev.py changed, reloading.
+INFO 2021-03-17 02:17:44,946 autoreload 1456 10028 617 Watching for file changes with StatReloader
+INFO 2021-03-17 02:18:29,754 autoreload 6420 10912 617 Watching for file changes with StatReloader
+INFO 2021-03-17 02:18:31,923 autoreload 14104 5204 617 Watching for file changes with StatReloader
+INFO 2021-03-17 02:18:40,579 autoreload 11532 17212 617 Watching for file changes with StatReloader
+INFO 2021-03-17 02:24:05,780 autoreload 12736 9280 618 Watching for file changes with StatReloader
+INFO 2021-03-17 02:24:31,596 autoreload 4188 3352 617 Watching for file changes with StatReloader
+INFO 2021-03-17 02:25:37,252 autoreload 12552 9840 617 Watching for file changes with StatReloader
+INFO 2021-03-17 02:28:03,713 autoreload 8460 14620 617 Watching for file changes with StatReloader
+INFO 2021-03-17 02:55:21,445 autoreload 14060 14032 617 Watching for file changes with StatReloader
+INFO 2021-03-17 02:55:22,893 basehttp 14060 3148 157 "GET / HTTP/1.1" 200 5262
+WARNING 2021-03-17 02:55:23,133 log 14060 3148 224 Not Found: /favicon.ico
+WARNING 2021-03-17 02:55:23,133 basehttp 14060 3148 157 "GET /favicon.ico HTTP/1.1" 404 3148
+INFO 2021-03-17 02:55:30,201 basehttp 14060 3148 157 "GET /admin HTTP/1.1" 301 0
+INFO 2021-03-17 02:55:30,225 basehttp 14060 3148 157 "GET /admin/ HTTP/1.1" 302 0
+INFO 2021-03-17 02:55:30,279 basehttp 14060 3148 157 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 2194
+INFO 2021-03-17 02:55:30,301 basehttp 14060 18736 157 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2138
+INFO 2021-03-17 02:55:30,302 basehttp 14060 3148 157 "GET /static/admin/css/base.css HTTP/1.1" 200 16307
+INFO 2021-03-17 02:55:30,302 basehttp 14060 4164 157 "GET /static/admin/css/login.css HTTP/1.1" 200 1185
+INFO 2021-03-17 02:55:30,304 basehttp 14060 18464 157 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 1360
+INFO 2021-03-17 02:55:30,304 basehttp 14060 12936 157 "GET /static/admin/css/responsive.css HTTP/1.1" 200 18339
+INFO 2021-03-17 02:55:30,711 basehttp 14060 18464 157 "GET /admin/ HTTP/1.1" 302 0
+INFO 2021-03-17 02:55:30,731 basehttp 14060 18464 157 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 2194
+INFO 2021-03-17 02:55:30,795 basehttp 14060 18464 157 "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+INFO 2021-03-17 02:55:30,824 basehttp 14060 18464 157 "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+INFO 2021-03-17 02:55:30,824 basehttp 14060 12936 157 "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+ERROR 2021-03-17 02:55:32,792 log 14060 12936 224 Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "E:\anaconda\envs\django3.1\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "E:\anaconda\envs\django3.1\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "E:\anaconda\envs\django3.1\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'test_db.tb_users' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\contrib\admin\sites.py", line 410, in login
+    return LoginView.as_view(**defaults)(request)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\views\decorators\debug.py", line 89, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\contrib\auth\views.py", line 63, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\views\generic\edit.py", line 141, in post
+    if form.is_valid():
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\forms\forms.py", line 177, in is_valid
+    return self.is_bound and not self.errors
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\forms\forms.py", line 172, in errors
+    self.full_clean()
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\forms\forms.py", line 375, in full_clean
+    self._clean_form()
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\forms\forms.py", line 402, in _clean_form
+    cleaned_data = self.clean()
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\contrib\auth\forms.py", line 215, in clean
+    self.user_cache = authenticate(self.request, username=username, password=password)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\contrib\auth\__init__.py", line 73, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\contrib\auth\backends.py", line 42, in authenticate
+    user = UserModel._default_manager.get_by_natural_key(username)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\contrib\auth\base_user.py", line 45, in get_by_natural_key
+    return self.get(**{self.model.USERNAME_FIELD: username})
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\db\models\query.py", line 425, in get
+    num = len(clone)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\db\models\query.py", line 269, in __len__
+    self._fetch_all()
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\db\models\query.py", line 1308, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\db\models\query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\db\models\sql\compiler.py", line 1156, in execute_sql
+    cursor.execute(sql, params)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "E:\anaconda\envs\django3.1\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "E:\anaconda\envs\django3.1\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "E:\anaconda\envs\django3.1\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.ProgrammingError: (1146, "Table 'test_db.tb_users' doesn't exist")
+ERROR 2021-03-17 02:55:32,797 basehttp 14060 12936 157 "POST /admin/login/?next=/admin/ HTTP/1.1" 500 290337
+INFO 2021-03-17 03:15:26,424 autoreload 10140 12864 617 Watching for file changes with StatReloader
+INFO 2021-03-17 03:15:27,717 basehttp 10140 11168 157 "GET / HTTP/1.1" 200 5262
+WARNING 2021-03-17 03:15:28,049 log 10140 11168 224 Not Found: /favicon.ico
+WARNING 2021-03-17 03:15:28,050 basehttp 10140 11168 157 "GET /favicon.ico HTTP/1.1" 404 3148
+WARNING 2021-03-17 03:15:35,067 log 10140 11168 224 Not Found: /post
+WARNING 2021-03-17 03:15:35,067 basehttp 10140 11168 157 "GET /post HTTP/1.1" 404 3127
+WARNING 2021-03-17 03:15:38,336 log 10140 11168 224 Not Found: /poster
+WARNING 2021-03-17 03:15:38,336 basehttp 10140 11168 157 "GET /poster HTTP/1.1" 404 3133
+INFO 2021-03-17 03:15:40,451 basehttp 10140 11168 157 "GET /postes/ HTTP/1.1" 200 6443
+INFO 2021-03-17 03:16:01,101 basehttp 10140 11168 157 "GET /admin/ HTTP/1.1" 302 0
+INFO 2021-03-17 03:16:01,127 basehttp 10140 11168 157 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 2194
+INFO 2021-03-17 03:16:02,981 basehttp 10140 11168 157 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 2355
+INFO 2021-03-17 03:16:03,066 basehttp 10140 11168 157 "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+INFO 2021-03-17 03:17:18,584 autoreload 14544 10732 617 Watching for file changes with StatReloader
+INFO 2021-03-17 03:17:21,363 basehttp 14544 18884 157 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 2194
+INFO 2021-03-17 03:17:22,476 basehttp 14544 18884 157 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 2355
+INFO 2021-03-17 03:17:25,778 basehttp 14544 18884 157 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2021-03-17 03:17:26,012 basehttp 14544 18884 157 "GET /admin/ HTTP/1.1" 200 3536
+INFO 2021-03-17 03:17:26,122 basehttp 14544 18884 157 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 380
+INFO 2021-03-17 03:17:26,150 basehttp 14544 17868 157 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2021-03-17 03:17:26,150 basehttp 14544 18884 157 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2021-03-17 03:17:32,466 basehttp 14544 18884 157 "GET /admin/post/poster/ HTTP/1.1" 200 4623
+INFO 2021-03-17 03:17:32,661 basehttp 14544 18884 157 "GET /static/admin/css/changelists.css HTTP/1.1" 200 6281
+INFO 2021-03-17 03:17:32,678 basehttp 14544 18884 157 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-03-17 03:17:32,681 basehttp 14544 8064 157 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2021-03-17 03:17:32,684 basehttp 14544 11168 157 "GET /static/admin/js/core.js HTTP/1.1" 200 5418
+INFO 2021-03-17 03:17:32,686 basehttp 14544 17324 157 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 6078
+INFO 2021-03-17 03:17:32,686 basehttp 14544 14896 157 "GET /static/admin/js/actions.js HTTP/1.1" 200 6783
+INFO 2021-03-17 03:17:32,691 basehttp 14544 8064 157 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2021-03-17 03:17:32,693 basehttp 14544 18884 157 "GET /static/admin/js/urlify.js HTTP/1.1" 200 8632
+INFO 2021-03-17 03:17:32,711 basehttp 14544 17868 157 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 287630
+INFO 2021-03-17 03:17:32,722 basehttp 14544 11168 157 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 232381
+INFO 2021-03-17 03:17:32,755 basehttp 14544 11168 157 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2021-03-17 03:17:35,320 basehttp 14544 11168 157 "GET /admin/ HTTP/1.1" 200 3536
+INFO 2021-03-17 03:17:36,158 basehttp 14544 11168 157 "GET /admin/auth/group/ HTTP/1.1" 200 4964
+INFO 2021-03-17 03:17:36,196 basehttp 14544 11168 157 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-03-17 03:17:36,225 basehttp 14544 11168 157 "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2021-03-17 03:17:37,600 basehttp 14544 11168 157 "GET /admin/ HTTP/1.1" 200 3536
+INFO 2021-03-17 03:17:39,520 basehttp 14544 11168 157 "GET /admin/post/poster/ HTTP/1.1" 200 4623
+INFO 2021-03-17 03:17:39,684 basehttp 14544 11168 157 "GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO 2021-03-17 03:17:41,200 basehttp 14544 11168 157 "GET /admin/ HTTP/1.1" 200 3536
+INFO 2021-03-17 03:38:07,211 autoreload 13892 10996 617 Watching for file changes with StatReloader
+INFO 2021-03-17 03:38:08,268 basehttp 13892 12708 157 "GET / HTTP/1.1" 200 5296
+WARNING 2021-03-17 03:38:23,913 log 13892 12708 224 Not Found: /verification
+WARNING 2021-03-17 03:38:23,913 basehttp 13892 12708 157 "GET /verification HTTP/1.1" 404 3350
+WARNING 2021-03-17 03:38:51,144 log 13892 12708 224 Not Found: /verification/smscode
+WARNING 2021-03-17 03:38:51,145 basehttp 13892 12708 157 "GET /verification/smscode HTTP/1.1" 404 3374
+WARNING 2021-03-17 03:38:59,701 log 13892 12708 224 Not Found: /verification/smscode/17305696233
+WARNING 2021-03-17 03:38:59,702 basehttp 13892 12708 157 "GET /verification/smscode/17305696233 HTTP/1.1" 404 3410
+WARNING 2021-03-17 03:39:18,291 log 13892 12708 224 Not Found: /verification/smscode/17305696233
+WARNING 2021-03-17 03:39:18,291 basehttp 13892 12708 157 "GET /verification/smscode/17305696233 HTTP/1.1" 404 3410
+INFO 2021-03-17 03:39:18,803 autoreload 13892 10996 240 D:\gitrepo\easy-transform-backend\easytrans\easytrans\urls.py changed, reloading.
+INFO 2021-03-17 03:39:19,302 autoreload 5296 9896 617 Watching for file changes with StatReloader
+INFO 2021-03-17 03:39:19,691 basehttp 5296 12496 157 "GET /verification/smscode/17305696233 HTTP/1.1" 301 0
+ERROR 2021-03-17 03:39:19,741 log 5296 12496 224 Internal Server Error: /verification/smscode/17305696233/
+Traceback (most recent call last):
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\rest_framework\views.py", line 511, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\rest_framework\views.py", line 423, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<class 'int'>`
+ERROR 2021-03-17 03:39:19,742 basehttp 5296 12496 157 "GET /verification/smscode/17305696233/ HTTP/1.1" 500 82437
+INFO 2021-03-17 03:39:29,898 autoreload 5296 9896 240 D:\gitrepo\easy-transform-backend\easytrans\verification\views.py changed, reloading.
+INFO 2021-03-17 03:39:30,488 autoreload 12740 6364 617 Watching for file changes with StatReloader
+INFO 2021-03-17 03:40:40,951 autoreload 12740 6364 240 D:\gitrepo\easy-transform-backend\easytrans\verification\views.py changed, reloading.
+INFO 2021-03-17 03:40:41,408 autoreload 13012 15888 617 Watching for file changes with StatReloader
+INFO 2021-03-17 03:41:26,003 autoreload 13012 15888 240 D:\gitrepo\easy-transform-backend\easytrans\verification\views.py changed, reloading.
+INFO 2021-03-17 03:41:26,528 autoreload 8772 13360 617 Watching for file changes with StatReloader
+INFO 2021-03-17 03:42:37,889 autoreload 8772 13360 240 D:\gitrepo\easy-transform-backend\easytrans\verification\views.py changed, reloading.
+INFO 2021-03-17 03:42:38,357 autoreload 9268 4616 617 Watching for file changes with StatReloader
+INFO 2021-03-17 03:43:01,342 autoreload 9268 4616 240 D:\gitrepo\easy-transform-backend\easytrans\easytrans\settings\dev.py changed, reloading.
+INFO 2021-03-17 03:43:01,818 autoreload 15484 7540 617 Watching for file changes with StatReloader
+INFO 2021-03-17 03:43:11,339 autoreload 15484 7540 240 D:\gitrepo\easy-transform-backend\easytrans\easytrans\settings\dev.py changed, reloading.
+INFO 2021-03-17 03:43:11,840 autoreload 12524 17852 617 Watching for file changes with StatReloader
+INFO 2021-03-17 03:43:23,405 autoreload 12524 17852 240 D:\gitrepo\easy-transform-backend\easytrans\easytrans\settings\dev.py changed, reloading.
+INFO 2021-03-17 03:43:23,856 autoreload 11628 18080 617 Watching for file changes with StatReloader
+INFO 2021-03-17 03:43:43,650 autoreload 11628 18080 240 D:\gitrepo\easy-transform-backend\easytrans\easytrans\settings\dev.py changed, reloading.
+INFO 2021-03-17 03:43:44,127 autoreload 3348 3448 617 Watching for file changes with StatReloader
+INFO 2021-03-17 03:44:09,118 autoreload 3348 3448 240 D:\gitrepo\easy-transform-backend\easytrans\verification\views.py changed, reloading.
+INFO 2021-03-17 03:44:09,582 autoreload 5384 17436 617 Watching for file changes with StatReloader
+INFO 2021-03-17 03:44:22,171 autoreload 5384 17436 240 D:\gitrepo\easy-transform-backend\easytrans\verification\views.py changed, reloading.
+INFO 2021-03-17 03:44:22,616 autoreload 4884 6432 617 Watching for file changes with StatReloader
+INFO 2021-03-17 03:45:05,104 autoreload 4884 6432 240 D:\gitrepo\easy-transform-backend\easytrans\verification\views.py changed, reloading.
+INFO 2021-03-17 03:45:05,578 autoreload 9424 16332 617 Watching for file changes with StatReloader
+INFO 2021-03-17 03:45:30,632 autoreload 9424 16332 240 D:\gitrepo\easy-transform-backend\easytrans\verification\views.py changed, reloading.
+INFO 2021-03-17 03:45:31,092 autoreload 9124 1840 617 Watching for file changes with StatReloader
+INFO 2021-03-17 03:45:47,831 autoreload 9124 1840 240 D:\gitrepo\easy-transform-backend\easytrans\verification\views.py changed, reloading.
+INFO 2021-03-17 03:45:48,308 autoreload 7148 18852 617 Watching for file changes with StatReloader
+INFO 2021-03-17 03:45:54,730 autoreload 7148 18852 240 D:\gitrepo\easy-transform-backend\easytrans\verification\views.py changed, reloading.
+INFO 2021-03-17 03:45:55,189 autoreload 7676 14104 617 Watching for file changes with StatReloader
+INFO 2021-03-17 03:46:48,004 basehttp 7676 19248 157 "GET /postes/?page=1&page_size=2 HTTP/1.1" 200 10476
+INFO 2021-03-17 03:48:19,069 autoreload 7676 14104 240 D:\gitrepo\easy-transform-backend\easytrans\verification\views.py changed, reloading.
+INFO 2021-03-17 04:06:33,181 autoreload 14504 14052 617 Watching for file changes with StatReloader
+INFO 2021-03-17 04:06:34,431 basehttp 14504 16168 157 "GET / HTTP/1.1" 200 5296
+INFO 2021-03-17 04:06:34,568 basehttp 14504 16168 157 "GET /static/rest_framework/img/grid.png HTTP/1.1" 200 1458
+INFO 2021-03-17 04:07:08,399 basehttp 14504 16168 157 "GET /verification/smscode/17305696233 HTTP/1.1" 301 0
+ERROR 2021-03-17 04:07:08,952 log 14504 16168 224 Internal Server Error: /verification/smscode/17305696233/
+Traceback (most recent call last):
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\anaconda\envs\django3.1\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\gitrepo\easy-transform-backend\easytrans\verification\views.py", line 31, in get
+    return Response({"code": resp['statusCode']})
+TypeError: string indices must be integers
+ERROR 2021-03-17 04:07:08,954 basehttp 14504 16168 157 "GET /verification/smscode/17305696233/ HTTP/1.1" 500 95535
+INFO 2021-03-17 04:09:55,074 autoreload 14504 14052 240 D:\gitrepo\easy-transform-backend\easytrans\verification\views.py changed, reloading.
+INFO 2021-03-17 04:09:55,519 autoreload 18772 1980 617 Watching for file changes with StatReloader
+ERROR 2021-03-17 04:10:03,396 log 18772 9392 224 Internal Server Error: /verification/smscode/17305696233/
+Traceback (most recent call last):
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\anaconda\envs\django3.1\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "E:\anaconda\envs\django3.1\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\gitrepo\easy-transform-backend\easytrans\verification\views.py", line 31, in get
+    resp = json.load(resp)
+  File "E:\anaconda\envs\django3.1\lib\json\__init__.py", line 293, in load
+    return loads(fp.read(),
+AttributeError: 'str' object has no attribute 'read'
+ERROR 2021-03-17 04:10:03,397 basehttp 18772 9392 157 "GET /verification/smscode/17305696233/ HTTP/1.1" 500 101177
+INFO 2021-03-17 04:10:48,861 autoreload 18772 1980 240 D:\gitrepo\easy-transform-backend\easytrans\verification\views.py changed, reloading.
+INFO 2021-03-17 04:10:49,296 autoreload 19420 14620 617 Watching for file changes with StatReloader
+INFO 2021-03-17 04:10:49,996 basehttp 19420 3140 157 "GET /verification/smscode/17305696233/ HTTP/1.1" 200 5515
+INFO 2021-03-17 04:12:40,620 autoreload 19420 14620 240 D:\gitrepo\easy-transform-backend\easytrans\verification\views.py changed, reloading.
+INFO 2021-03-17 04:12:41,070 autoreload 14796 4220 617 Watching for file changes with StatReloader
+INFO 2021-03-17 04:12:44,244 basehttp 14796 3148 157 "GET /verification/smscode/17305696233/ HTTP/1.1" 200 5688
+INFO 2021-03-17 04:14:58,538 autoreload 14796 4220 240 D:\gitrepo\easy-transform-backend\easytrans\verification\views.py changed, reloading.
+INFO 2021-03-17 04:14:59,025 autoreload 2760 17804 617 Watching for file changes with StatReloader
+INFO 2021-03-17 04:15:09,657 autoreload 2760 17804 240 D:\gitrepo\easy-transform-backend\easytrans\verification\views.py changed, reloading.
+INFO 2021-03-17 04:15:10,094 autoreload 2548 3952 617 Watching for file changes with StatReloader
+INFO 2021-03-17 04:15:46,680 basehttp 2548 7872 157 "GET /verification/smscode/17305696233/ HTTP/1.1" 200 5515
+WARNING 2021-03-17 04:16:16,278 log 2548 7872 224 Not Found: /verification/smscode/11305696233/
+WARNING 2021-03-17 04:16:16,279 basehttp 2548 7872 157 "GET /verification/smscode/11305696233/ HTTP/1.1" 404 3414
+INFO 2021-03-17 04:16:51,433 basehttp 2548 7872 157 "GET /verification/smscode/17305696234/ HTTP/1.1" 200 5515
+INFO 2021-03-17 04:17:28,306 basehttp 2548 4216 157 "GET /verification/smscode/17305696234/ HTTP/1.1" 200 5515
+INFO 2021-03-17 04:17:44,617 basehttp 2548 4216 157 "GET /verification/smscode/17305696234/ HTTP/1.1" 200 5515
+INFO 2021-03-17 04:18:19,389 basehttp 2548 14528 157 "GET /verification/smscode/17305696234/ HTTP/1.1" 200 5515
+INFO 2021-03-17 04:18:29,168 basehttp 2548 14528 157 "GET /verification/smscode/17305696233/ HTTP/1.1" 200 5515
+INFO 2021-03-17 04:19:34,145 autoreload 2548 3952 240 D:\gitrepo\easy-transform-backend\easytrans\verification\views.py changed, reloading.
+INFO 2021-03-17 04:19:34,640 autoreload 3940 17424 617 Watching for file changes with StatReloader
+INFO 2021-03-17 04:20:41,188 autoreload 3940 17424 240 D:\gitrepo\easy-transform-backend\easytrans\verification\views.py changed, reloading.
+INFO 2021-03-17 04:20:41,636 autoreload 9172 19960 617 Watching for file changes with StatReloader
+INFO 2021-03-17 04:20:42,953 autoreload 9172 19960 240 D:\gitrepo\easy-transform-backend\easytrans\verification\views.py changed, reloading.
+INFO 2021-03-17 04:20:43,467 autoreload 17852 12172 617 Watching for file changes with StatReloader
+INFO 2021-03-17 04:32:12,952 autoreload 17852 12172 240 D:\gitrepo\easy-transform-backend\easytrans\verification\views.py changed, reloading.
+INFO 2021-03-17 04:32:13,420 autoreload 9404 8544 617 Watching for file changes with StatReloader
+INFO 2021-03-17 04:33:08,517 autoreload 9404 8544 240 D:\gitrepo\easy-transform-backend\easytrans\verification\views.py changed, reloading.
+INFO 2021-03-17 04:33:09,001 autoreload 19948 15328 617 Watching for file changes with StatReloader
+WARNING 2021-03-17 04:57:49,852 log 19948 5164 224 Not Found: /api/tip
+WARNING 2021-03-17 04:57:49,854 log 19948 14596 224 Not Found: /api/notice
+WARNING 2021-03-17 04:57:49,854 basehttp 19948 5164 157 "GET /api/tip HTTP/1.1" 404 3249
+WARNING 2021-03-17 04:57:49,854 basehttp 19948 14596 157 "GET /api/notice HTTP/1.1" 404 3258
+WARNING 2021-03-17 05:03:27,409 log 19948 11532 224 Not Found: /api/notice
+WARNING 2021-03-17 05:03:27,410 log 19948 16568 224 Not Found: /api/tip
+WARNING 2021-03-17 05:03:27,411 basehttp 19948 11532 157 "GET /api/notice HTTP/1.1" 404 3258
+WARNING 2021-03-17 05:03:27,411 basehttp 19948 16568 157 "GET /api/tip HTTP/1.1" 404 3249
+WARNING 2021-03-17 05:03:46,052 log 19948 11532 224 Not Found: /api/tip
+WARNING 2021-03-17 05:03:46,053 log 19948 16568 224 Not Found: /api/notice
+WARNING 2021-03-17 05:03:46,053 basehttp 19948 11532 157 "GET /api/tip HTTP/1.1" 404 3249
+WARNING 2021-03-17 05:03:46,054 basehttp 19948 16568 157 "GET /api/notice HTTP/1.1" 404 3258
+WARNING 2021-03-17 05:04:06,487 log 19948 16568 224 Not Found: /api/tip
+WARNING 2021-03-17 05:04:06,488 basehttp 19948 16568 157 "GET /api/tip HTTP/1.1" 404 3249
+WARNING 2021-03-17 05:04:09,142 log 19948 16568 224 Not Found: /api/tip
+WARNING 2021-03-17 05:04:09,142 basehttp 19948 16568 157 "GET /api/tip HTTP/1.1" 404 3249
+WARNING 2021-03-17 05:04:36,282 log 19948 16568 224 Not Found: /api/tip
+WARNING 2021-03-17 05:04:36,283 basehttp 19948 16568 157 "GET /api/tip HTTP/1.1" 404 3249
+WARNING 2021-03-17 05:05:52,376 log 19948 16568 224 Not Found: /api/tip
+WARNING 2021-03-17 05:05:52,376 basehttp 19948 16568 157 "GET /api/tip HTTP/1.1" 404 3249
+WARNING 2021-03-17 05:05:59,053 log 19948 16568 224 Not Found: /api/tip
+WARNING 2021-03-17 05:05:59,054 basehttp 19948 16568 157 "GET /api/tip HTTP/1.1" 404 3249
+WARNING 2021-03-17 05:06:06,005 log 19948 16568 224 Not Found: /api/tip
+WARNING 2021-03-17 05:06:06,006 basehttp 19948 16568 157 "GET /api/tip HTTP/1.1" 404 3249
+WARNING 2021-03-17 05:07:17,436 log 19948 16568 224 Not Found: /api/tip
+WARNING 2021-03-17 05:07:17,437 basehttp 19948 16568 157 "GET /api/tip HTTP/1.1" 404 3249
+WARNING 2021-03-17 05:07:17,813 log 19948 16568 224 Not Found: /api/tip
+WARNING 2021-03-17 05:07:17,814 basehttp 19948 16568 157 "GET /api/tip HTTP/1.1" 404 3249
+WARNING 2021-03-17 05:10:20,869 log 19948 16568 224 Not Found: /api/tip
+WARNING 2021-03-17 05:10:20,870 basehttp 19948 16568 157 "GET /api/tip HTTP/1.1" 404 3249
+WARNING 2021-03-17 05:11:07,576 log 19948 16568 224 Not Found: /api/tip
+WARNING 2021-03-17 05:11:07,577 basehttp 19948 16568 157 "GET /api/tip HTTP/1.1" 404 3249
+WARNING 2021-03-17 05:12:32,051 log 19948 16568 224 Not Found: /api/tip
+WARNING 2021-03-17 05:12:32,052 basehttp 19948 16568 157 "GET /api/tip HTTP/1.1" 404 3249
+WARNING 2021-03-17 05:13:46,926 log 19948 16568 224 Not Found: /api/tip
+WARNING 2021-03-17 05:13:46,927 basehttp 19948 16568 157 "GET /api/tip HTTP/1.1" 404 3249
+WARNING 2021-03-17 05:14:12,293 log 19948 16568 224 Not Found: /api/tip
+WARNING 2021-03-17 05:14:12,294 basehttp 19948 16568 157 "GET /api/tip HTTP/1.1" 404 3249
+WARNING 2021-03-17 05:14:16,824 log 19948 16568 224 Not Found: /api/tip
+WARNING 2021-03-17 05:14:16,824 basehttp 19948 16568 157 "GET /api/tip HTTP/1.1" 404 3249
+WARNING 2021-03-17 05:14:54,924 log 19948 16568 224 Not Found: /api/tip
+WARNING 2021-03-17 05:14:54,924 basehttp 19948 16568 157 "GET /api/tip HTTP/1.1" 404 3249
+WARNING 2021-03-17 05:16:38,074 log 19948 16568 224 Not Found: /api/tip
+WARNING 2021-03-17 05:16:38,075 basehttp 19948 16568 157 "GET /api/tip HTTP/1.1" 404 3249
+WARNING 2021-03-17 05:17:00,557 log 19948 16568 224 Not Found: /api/tip
+WARNING 2021-03-17 05:17:00,557 basehttp 19948 16568 157 "GET /api/tip HTTP/1.1" 404 3249
+WARNING 2021-03-17 05:17:03,238 log 19948 16568 224 Not Found: /api/tip
+WARNING 2021-03-17 05:17:03,238 basehttp 19948 16568 157 "GET /api/tip HTTP/1.1" 404 3249
+WARNING 2021-03-17 05:17:48,491 log 19948 16568 224 Not Found: /api/tip
+WARNING 2021-03-17 05:17:48,491 basehttp 19948 16568 157 "GET /api/tip HTTP/1.1" 404 3249
+WARNING 2021-03-17 05:17:51,431 log 19948 16568 224 Not Found: /api/tip
+WARNING 2021-03-17 05:17:51,432 basehttp 19948 16568 157 "GET /api/tip HTTP/1.1" 404 3249
+WARNING 2021-03-17 05:19:37,266 log 19948 16568 224 Not Found: /api/tip
+WARNING 2021-03-17 05:19:37,266 basehttp 19948 16568 157 "GET /api/tip HTTP/1.1" 404 3249
+WARNING 2021-03-17 05:19:56,411 log 19948 16568 224 Not Found: /api/tip
+WARNING 2021-03-17 05:19:56,412 basehttp 19948 16568 157 "GET /api/tip HTTP/1.1" 404 3249
+WARNING 2021-03-17 05:19:58,095 log 19948 16568 224 Not Found: /api/tip
+WARNING 2021-03-17 05:19:58,096 basehttp 19948 16568 157 "GET /api/tip HTTP/1.1" 404 3249
+WARNING 2021-03-17 05:20:18,730 log 19948 16568 224 Not Found: /api/tip
+WARNING 2021-03-17 05:20:18,730 basehttp 19948 16568 157 "GET /api/tip HTTP/1.1" 404 3249
+INFO 2021-03-17 05:20:42,455 basehttp 19948 18132 157 "GET /verification/smscode/17305696233/ HTTP/1.1" 200 5515
+WARNING 2021-03-17 05:21:19,077 log 19948 16568 224 Not Found: /api/tip
+WARNING 2021-03-17 05:21:19,078 basehttp 19948 16568 157 "GET /api/tip HTTP/1.1" 404 3249
+WARNING 2021-03-17 05:21:19,357 log 19948 16568 224 Not Found: /api/tip
+WARNING 2021-03-17 05:21:19,357 basehttp 19948 16568 157 "GET /api/tip HTTP/1.1" 404 3249
+WARNING 2021-03-17 05:26:09,131 log 19948 16568 224 Not Found: /api/tip
+WARNING 2021-03-17 05:26:09,132 basehttp 19948 16568 157 "GET /api/tip HTTP/1.1" 404 3249
+WARNING 2021-03-17 05:26:09,140 log 19948 16568 224 Not Found: /api/tip
+WARNING 2021-03-17 05:26:09,141 basehttp 19948 16568 157 "GET /api/tip HTTP/1.1" 404 3249
+WARNING 2021-03-17 05:26:10,793 log 19948 16568 224 Not Found: /api/tip
+WARNING 2021-03-17 05:26:10,794 basehttp 19948 16568 157 "GET /api/tip HTTP/1.1" 404 3249
+INFO 2021-03-17 05:26:17,972 basehttp 19948 16568 157 "GET /verification/smscode/17305696233 HTTP/1.1" 301 0
+INFO 2021-03-17 05:26:18,290 basehttp 19948 16568 157 "GET /verification/smscode/17305696233/ HTTP/1.1" 200 17
+WARNING 2021-03-17 05:28:56,620 log 19948 16568 224 Not Found: /api/tip
+WARNING 2021-03-17 05:28:56,620 basehttp 19948 16568 157 "GET /api/tip HTTP/1.1" 404 3249
+INFO 2021-03-17 05:29:03,796 basehttp 19948 16568 157 "GET /verification/smscode/17305696233/ HTTP/1.1" 200 17
+INFO 2021-03-17 05:31:19,773 autoreload 19948 15328 240 D:\gitrepo\easy-transform-backend\easytrans\verification\views.py changed, reloading.
+INFO 2021-03-17 05:31:20,246 autoreload 21420 20396 617 Watching for file changes with StatReloader
+WARNING 2021-03-17 05:31:23,706 log 21420 14200 224 Not Found: /api/tip
+WARNING 2021-03-17 05:31:23,706 basehttp 21420 14200 157 "GET /api/tip HTTP/1.1" 404 3249
+INFO 2021-03-17 05:31:26,969 basehttp 21420 14200 157 "GET /verification/smscode/17305696233/ HTTP/1.1" 200 12
+WARNING 2021-03-17 05:31:39,749 log 21420 14200 224 Not Found: /api/tip
+WARNING 2021-03-17 05:31:39,750 basehttp 21420 14200 157 "GET /api/tip HTTP/1.1" 404 3249
+INFO 2021-03-17 12:19:01,610 autoreload 15444 9456 617 Watching for file changes with StatReloader
+INFO 2021-03-17 12:24:49,384 autoreload 9136 16864 617 Watching for file changes with StatReloader
